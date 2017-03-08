@@ -83,7 +83,7 @@
                                         <td class="table-text">
                                             <div><strong>Navn: </strong>{{ $task->name }}</div>
                                             <div><strong>Prioritet: </strong>{{ $task->viktighet }}</div>
-                                            <div><strong>Eier: </strong>{{ Auth::user()->name }}</div>
+                                            <div><strong>Eier: </strong>{{ $task->user->name }}</div>
                                             <div><strong>Kommentar: </strong>{{ $task->kommentar }}</div>
                                             <div><strong>Opprettet: </strong>{{ $task->created_at }}</div>
                                         </td>
