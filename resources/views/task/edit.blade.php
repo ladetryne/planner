@@ -14,7 +14,7 @@
 					@include('common.errors')
 						
 						<!-- sjema for redigering av oppgave -->
-					<form action="{{url('/task/{task}/update')}}" method="POST" class="form-horizontal">
+					<form action="{{url('/task/'.$task->id.'/update')}}" method="POST" class="form-horizontal">
 				<!--	<form action="{{url('/task/{id}/update')}}" method="POST">	-->
 					{{ csrf_field() }}
 						

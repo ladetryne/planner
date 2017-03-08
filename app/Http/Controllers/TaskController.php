@@ -88,7 +88,7 @@ class TaskController extends Controller
      */
     public function destroy(Request $request, Task $task)
     {
-        $this->authorize('destroy', $task);
+     
 
         $task->delete();
 
@@ -102,7 +102,7 @@ class TaskController extends Controller
      * 
      * 
      */    
-    public function edit(task $task)
+    public function edit(Task $task)
     {
       //  dd($request->kommentar);
         return view('task.edit', compact('task'));
