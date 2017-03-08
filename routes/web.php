@@ -17,4 +17,14 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index');
+Route::get('/home', 'TaskController@index');
+Route::get('/logout', 'Auth\AuthController@logout');
+Route::get('/tasks', 'TaskController@index');
+Route::post('/task', 'TaskController@store');
+Route::delete('/task/{task}', 'TaskController@destroy');
+
+//  Rute for editering av tasks
+Route::get('/task/{task}/edit', 'TaskController@edit');
+
+// rute til update av oppgaver
+Route::post('/task/{id}/update', 'TaskController@update');
