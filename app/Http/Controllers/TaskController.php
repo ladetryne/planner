@@ -64,13 +64,13 @@ class TaskController extends Controller
         $this->validate($request, [
         'name' => 'required|max:255',
         'viktighet' => 'required|max:255',   // 'viktighet' => 'required|between:1,3'     
-        'kommentar' => 'required|max:255',   //  between:1,3 er for Integer
+        'info' => 'required|max:255',   //  between:1,3 er for Integer
         ]);
       //   dd($request->viktighet);
         $request->user()->tasks()->create([
         'name' => $request->name,
         'viktighet' => $request->viktighet,
-        'kommentar' => $request->kommentar,
+        'info' => $request->info,
         ]);
 
 
@@ -122,13 +122,17 @@ class TaskController extends Controller
     //    dd($request->kommentar);
         $task->update([
             'name' => $request->name,
-            'kommentar' => $request->kommentar,
+            'info' => $request->info,
             ]);
       //      dd($request->kommentar);
             return redirect('/tasks');
     }
      
-
+    public function comments(Task $task)
+    {
+      //  dd($request->kommentar);
+        return view('task.comments', compact('task'));
+    }
  /*    
     public function update(Request $request, Task $task)
     {

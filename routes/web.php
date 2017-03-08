@@ -25,5 +25,8 @@ Route::delete('/task/{task}', 'TaskController@destroy');
 //  Rute for editering av tasks
 Route::get('/task/{task}/edit', 'TaskController@edit');
 
+// rute til comments
+Route::get('/task/{task}/comments', 'taskController@comments');
+
 // rute til update av oppgaver
 Route::post('/task/{task}/update', 'TaskController@update');

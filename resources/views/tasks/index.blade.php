@@ -24,6 +24,7 @@
                                 <input type="text" name="name" id="task-name" class="form-control" value="{{ old('name') }}">
                             </div>
                         </div>
+                        
                          <!--   Viktighet -->
                         <div class="form-group">
                             <label for="task-viktighet" class="col-sm-3 control-label">Prioritet:</label>
@@ -34,11 +35,11 @@
                                 </select> 
                         </div>
 
-                        <!-- Comments -->
+                        <!-- ekstra info -->
                         <div class="form-group">
-                            <label for="task-kommentar" class="col-sm-3 control-label">Kommentar:</label>
+                            <label for="task-kommentar" class="col-sm-3 control-label">Ekstra Info:</label>
                             <div class="col-sm-6">
-                                <input type="text" name="kommentar" id="task-kommentar" class="form-control" value="{{ old('kommentar') }}">
+                                <input type="text" name="info" id="task-info" class="form-control" value="{{ old('info') }}">
                             </div>
                         </div>
 
@@ -84,12 +85,16 @@
                                             <div><strong>Navn: </strong>{{ $task->name }}</div>
                                             <div><strong>Prioritet: </strong>{{ $task->viktighet }}</div>
                                             <div><strong>Eier: </strong>{{ $task->user->name }}</div>
-                                            <div><strong>Kommentar: </strong>{{ $task->kommentar }}</div>
+                                            <div><strong>Info: </strong>{{ $task->info }}</div>
                                             <div><strong>Opprettet: </strong>{{ $task->created_at }}</div>
                                         </td>
 
                                         <td class="table-text">
                                             <a href="/task/{{$task->id}}/edit"><strong>Rediger</strong></a>
+                                        </td>
+
+                                        <td class="table-text">
+                                            <a href="/task/{{$task->id}}/comments"><strong>Comments</strong></a>
                                         </td>
 
                                         <!--slett oppgave knapp -->

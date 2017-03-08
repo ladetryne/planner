@@ -3,6 +3,7 @@
 namespace App;
 
 use App\User;
+use App\Comment;
 use Illuminate\Database\Eloquent\Model;
 
 class Task extends Model
@@ -11,7 +12,7 @@ class Task extends Model
      * mass assignable attributes
      * @var array
      */
-    protected $fillable = ['name','viktighet','kommentar'];
+    protected $fillable = ['name','viktighet','info'];
 //    protected $fillable = ['viktighet'];    
     
     /**
@@ -30,6 +31,12 @@ class Task extends Model
         return $this->belongsTo(User::class);
     }
 
+
+
+    public function comments()
+    {
+        return $this->hasMany(Comment::class);
+    }
 
     /**
      * hent frem alle oppgavene til brukeren

@@ -8,7 +8,9 @@
                 <div class="panel-heading">Welcome</div>
 
                 <div class="panel-body">
-                    Your Application's Landing Page.
+                    <td class="table-text">
+                        <a href="/tasks"><strong>Gå til oppgaver</strong></a>
+                    </td>
                 </div>
             </div>
         </div>
