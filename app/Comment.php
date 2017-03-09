@@ -7,8 +7,13 @@ use app\Task;
 
 class Comment extends Model
 {
-	    protected $fillable = ['body'];
+	    protected $fillable = ['body', 'task_id'];
 
+	/**    protected $casts = [
+	    	'task_id' => 'int',
+	    ];
+
+	*/
 		public function task()
 		{
 			return $this->belongsto(Task::class);
