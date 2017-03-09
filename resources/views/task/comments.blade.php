@@ -12,10 +12,16 @@
 						<form action="{{url('/task/'.$task->id.'/comments')}}" method="POST" class="form-horizontal">
 							{{ csrf_field() }} 
 							<div class="form-group">
-								<label for="comment-body" class="col-sm-3 control-label">Ny kommentar: </label>
+								<h2><center>Oppgave: {{ $task->name }}</center></h2>
+								<hr>
+								<label for="comment-body" class="col-sm-3 control-label">
+									<p>Ny Kommentar:</p>
+								</label>
+
 								<div>
-									<input type="text" name="body" id="comments-body" class="form-control">
-								</div>						
+									<input type="text" name="body" id="comments-body" class="col-sm-8">
+								</div>
+
 							</div>
 						
 							<!-- knapp for lagring av oppgaver -->
@@ -43,6 +49,7 @@
 				<div class="panel-heading">
 					<b>Kommentarer:</b>
 				</div>
+				<hr>
 				<div class="panel-body">
 					@include('common.errors')
 

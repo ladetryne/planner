@@ -83,10 +83,11 @@
                                     <tr>
                                         <td class="table-text">
                                             <div><strong>Navn: </strong>{{ $task->name }}</div>
-                                            <div><strong>Prioritet: </strong>{{ $task->viktighet }}</div>
-                                            <div><strong>Eier: </strong>{{ $task->user->name }}</div>
                                             <div><strong>Info: </strong>{{ $task->info }}</div>
-                                            <div><strong>Opprettet: </strong>{{ $task->created_at }}</div>
+                                            <div><strong>Prioritet: </strong>{{ $task->viktighet }}</div>
+                                            <div><strong>Eier: </strong>{{ $task->user->name }}</div>                                           
+                                            <hr>
+                                            <div><strong>Opprettet: </strong>{{ $task->created_at->diffForHumans() }}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>Redigert: </strong>{{ $task->updated_at->diffForHumans() }}</div>
                                         </td>
 
                                         <td class="table-text">

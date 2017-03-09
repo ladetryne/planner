@@ -29,10 +29,10 @@
 
                         <!-- Endre Kommentar -->
                         <div class="form-group">
-                            <label for="task-name" class="col-sm-3 control-label">Kommentar :</label>
+                            <label for="task-name" class="col-sm-3 control-label">Ekstra Info :</label>
 
                             <div class="col-sm-8">
-                                <input type="text" name="kommentar" id="task-kommentar" class="form-control" value="{{ $task->kommentar }}">
+                                <input type="text" name="info" id="task-info" class="form-control" value="{{ $task->info }}">
                             </div>
                         </div>
 
