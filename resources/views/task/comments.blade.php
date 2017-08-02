@@ -1,6 +1,6 @@
-@extends('layouts.app')
+@extends('layouts.admin')
 
-@section('content')
+@section('maincontent')
 
  <!-- "{{url('/task/'.$task->id.'/update')}}"   -->
 	<!-- sjema for å lage en comment -->

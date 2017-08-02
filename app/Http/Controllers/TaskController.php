@@ -30,10 +30,6 @@ class TaskController extends Controller
         $this->tasks = $tasks;
     }
 
- 
-
-
-
     /**
      * vi liste over brukerens oppgaver
      * @param  Request  $request
@@ -41,11 +37,27 @@ class TaskController extends Controller
      */
     public function index(Request $request)
     {
-        $tasks = $this->tasks->forUser($request->user());
+        $page_title = 'Tasks';
+        $tasks = Task::all();
         //dd($tasks);
 
         return view('tasks.index', compact('tasks'));
     }
+    public function myindex(Request $request)
+    {
+        $tasks = $this->tasks->forUser($request->user());
+        //dd($tasks);
+
+        return view('tasks.mytasks', compact('tasks'));
+    }
+    public function newtask(Request $request)
+    {
+        $tasks = $this->tasks->forUser($request->user());
+        //dd($tasks);
+
+        return view('tasks.newtask', compact('tasks'));
+    }
+
 
 
 

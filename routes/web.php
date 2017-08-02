@@ -15,10 +15,16 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('admin', function () {
+    return view('admin_template');
+});
+
 Auth::routes();
 
 Route::get('/home', 'TaskController@index');
 Route::get('/tasks', 'TaskController@index');
+Route::get('/mytasks', 'TaskController@myindex');
+Route::get('/newtasks', 'TaskController@newtask');
 Route::post('/task', 'TaskController@store');
 Route::delete('/task/{task}', 'TaskController@destroy');
 
