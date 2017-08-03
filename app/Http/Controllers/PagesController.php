@@ -8,9 +8,13 @@ use App\Http\Controllers\Controller;
 
 class pagesController extends Controller
 {
-    public function index()
+    public function calendar()
     {
-        return view('calender.calender');
+        return view('calendar');
+    }
+    public function dashboard()
+    {
+    	return view('dashboard');
     }
 }
  

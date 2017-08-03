@@ -21,7 +21,8 @@ Route::get('admin', function () {
 
 Auth::routes();
 
-Route::get('/home', 'TaskController@index');
+Route::get('/home', 'PagesController@dashboard');
+
 Route::get('/tasks', 'TaskController@index');
 Route::get('/mytasks', 'TaskController@myindex');
 Route::get('/newtasks', 'TaskController@newtask');
@@ -40,4 +41,11 @@ Route::post('/task/{task}/update', 'TaskController@update');
 // rute til lagring av comments
 Route::Post('/task/{task}/comments', 'CommentsController@store');
 
-Route::get('/calender', 'PagesController@index');
+// calender rute 
+Route::get('/calendar', 'PagesController@calendar');
+
+
+
+
+
+

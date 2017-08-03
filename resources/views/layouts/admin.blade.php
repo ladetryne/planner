@@ -23,7 +23,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
         apply the skin class to the body tag so the changes take effect.
   -->
   <link rel="stylesheet" href="{{ asset("/admin-lte/dist/css/skins/skin-blue.min.css") }}">
-  @yield('extracss')
+  @stack('styles')
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
   <!--[if lt IE 9]>
@@ -60,13 +60,10 @@ desired effect
 
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
+    
     <!-- Content Header (Page header) -->
-    <section class="content-header">
-      <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-dashboard"></i> Level</a></li>
-        <li class="active">Here</li>
-      </ol>
-    </section>
+    @yield('content-header')
+
 
     <!-- Main content -->
     <section class="content">
@@ -91,8 +88,7 @@ desired effect
 <script src="{{ asset("/admin-lte/bootstrap/js/bootstrap.min.js") }}"></script>
 <!-- AdminLTE App -->
 <script src="{{ asset("/admin-lte/dist/js/app.min.js") }}"></script>
-
-@yield('footerscripts')
+@stack('scripts')
 <!-- Optionally, you can add Slimscroll and FastClick plugins.
      Both of these plugins are recommended to enhance the
      user experience. Slimscroll is required when using the
