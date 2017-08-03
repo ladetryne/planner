@@ -39,3 +39,5 @@ Route::post('/task/{task}/update', 'TaskController@update');
 
 // rute til lagring av comments
 Route::Post('/task/{task}/comments', 'CommentsController@store');
+
+Route::get('/calender', 'PagesController@index');

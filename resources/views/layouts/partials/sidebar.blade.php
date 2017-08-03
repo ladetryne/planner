@@ -24,7 +24,7 @@
         <li><a href="/mytasks"><i class="fa fa-link"></i> <span>Mine Oppgaver</span></a></li>
         <li><a href="/tasks"><i class="fa fa-link"></i> <span>Alle Oppgaver</span></a></li>
         <li><a href="/newtasks"><i class="fa fa-link"></i> <span>Lag Ny Oppgave</span></a></li>
-        <li><a href="#"><i class="fa fa-link"></i> <span>Kalender</span></a></li>
+        <li><a href="/calender"><i class="fa fa-link"></i> <span>Kalender</span></a></li>
 
         {{-- meny knapp med underknapper START --}}
 {{--         <li class="treeview">
