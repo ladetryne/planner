@@ -41,21 +41,19 @@
                                         <div class="row">
                                         <div class="col-sm-10">
                                             <td class="table-text">
-                                                <div><strong>Navn: </strong>{{ $task->name }} &nbsp;&nbsp
-                                                <strong>Eier: </strong>{{ $task->user->name }} &nbsp;&nbsp
-                                                <strong>Prioritet: </strong>{{ $task->viktighet }} &nbsp;&nbsp
-                                                <strong>Arbeidstimer: </strong>{{ $task->arbeidstimer }} &nbsp;&nbsp
-                                                <strong>Start Dato: </strong>{{ $task->start_dato }} &nbsp;&nbsp
+                                                <div><strong>Navn: </strong>{{ $task->name }} &nbsp;
+                                                <strong>Eier: </strong>{{ $task->user->name }} &nbsp;
+                                                <strong>Prioritet: </strong>{{ $task->viktighet }} &nbsp;
+                                                <strong>Arbeidstimer: </strong>{{ $task->arbeidstimer }} &nbsp;
+                                                <strong>Start Dato: </strong>{{ $task->start_dato }} &nbsp;
                                                 <strong>Slutt Dato: </strong>{{ $task->slutt_dato }}</div>   
                                                 <div><strong>Info: </strong>{{ $task->info }}</div>
-                                                <div><strong>Finished: </strong>20%</div>
+                                                <div><strong>Finished: </strong>{{ $task->ferdig }}%</div>
                                                 <div class="row">
                                                     <div class="col-sm-11">
                                                         <div class="progress xs">
                                                             <!-- Change the css width attribute to simulate progress -->
-                                                            <div class="progress-bar progress-bar-aqua" style="width: 20%" role="progressbar"
-                                                                 aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
-                                                              <span class="sr-only">20% Complete</span>
+                                                            <div class="progress-bar progress-bar-aqua" style="width: {{ $task->ferdig }}%" role="progressbar">
                                                             </div>
                                                         </div>
                                                     </div>

@@ -39,6 +39,7 @@ $factory->define(App\Task::class, function (Faker\Generator $faker) {
         'viktighet' => $p,
         'info' => $faker->catchPhrase,
         'arbeidstimer' => rand(8, 150),
+        'ferdig' => rand(1, 100),
         'start_dato' => \Carbon\Carbon::now()->subSeconds(rand(0, 59))->subHours(rand(0, 23))->subDays(rand(1,20))->subMonths(rand(1,3)),
         'slutt_dato' => \Carbon\Carbon::now()->subSeconds(rand(0, 59))->subHours(rand(0, 23))->subDays(rand(1,7))->subMonths(rand(3,12))
     ];
