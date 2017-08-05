@@ -19,6 +19,9 @@ class CreateTasksTable extends Migration
             $table->string('name');
             $table->string('viktighet');
             $table->string('info');
+            $table->integer('arbeidstimer')->nullable();
+            $table->timestamp('start_dato')->nullable();
+            $table->timestamp('slutt_dato')->nullable();
             $table->timestamps();
         });
     }

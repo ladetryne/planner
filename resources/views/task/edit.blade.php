@@ -1,5 +1,15 @@
 @extends('layouts.admin')
-
+@section('content-header')
+      <h1>
+        Oppgave
+        <small>Editering: </small>
+      </h1>
+      <ol class="breadcrumb">
+        <li><a href="/home"><i class="fa fa-calendar"></i> Dashboard</a></li>
+        <li><a href="#"><i class="fa fa-calendar"></i> Oppgaver</a></li>
+        <li class="active">Editering</li>
+      </ol>
+@endsection
 @section('maincontent')
 	
 

@@ -1,8 +1,18 @@
 @extends('layouts.admin')
-
+@section('content-header')
+      <h1>
+        Project: Project Tittel
+        <small>Alle Oppgaver: </small>
+      </h1>
+      <ol class="breadcrumb">
+        <li><a href="/home"><i class="fa fa-calendar"></i> Dashboard</a></li>
+        <li><a href="/home"><i class="fa fa-calendar"></i> Dashboard</a></li>
+        <li class="active">Kalender</li>
+      </ol>
+@endsection
 @section('maincontent')
     <div class="container">
-        <div class="col-sm-offset-2 col-sm-8">
+        <div class="col-sm-12">
    
             <!-- aktive oppgaver -->
             @if (count($tasks) > 0)
@@ -34,7 +44,10 @@
                                             <div><strong>Navn: </strong>{{ $task->name }}</div>
                                             <div><strong>Info: </strong>{{ $task->info }}</div>
                                             <div><strong>Prioritet: </strong>{{ $task->viktighet }}</div>
-                                            <div><strong>Eier: </strong>{{ $task->user->name }}</div>                                           
+                                            <div><strong>Eier: </strong>{{ $task->user->name }}</div>
+                                            <div><strong>Arbeidstimer: </strong>{{ $task->arbeidstimer }}</div>
+                                            <div><strong>Start Dato: </strong>{{ $task->start_dato }}</div> 
+                                            <div><strong>Slutt Dato: </strong>{{ $task->slutt_dato }}</div>                                           
                                             <hr>
                                             <div><strong>Opprettet: </strong>{{ $task->created_at->diffForHumans() }}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>Redigert: </strong>{{ $task->updated_at->diffForHumans() }}</div>
                                         </td>

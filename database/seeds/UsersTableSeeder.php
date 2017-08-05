@@ -15,11 +15,13 @@ class UsersTableSeeder extends Seeder
             'name' => 'Robin Foldnes',
             'email' => 'robin@gantic.no',
             'password' => bcrypt('hemmelig'),
+            'created_at' => \Carbon\Carbon::now()
         ]);
         DB::table('users')->insert([
             'name' => 'Pele Politi',
             'email' => 'pelle@gantic.no',
             'password' => bcrypt('hemmelig'),
+            'created_at' => \Carbon\Carbon::now()
         ]);
     }
 }

@@ -12,7 +12,7 @@ class Task extends Model
      * mass assignable attributes
      * @var array
      */
-    protected $fillable = ['name','viktighet','info'];
+    protected $fillable = ['name','viktighet','info','arbeidstimer','slutt_dato','start_dato'];
 //    protected $fillable = ['viktighet'];    
     
     /**

@@ -1,5 +1,14 @@
 @extends('layouts.admin')
-
+@section('content-header')
+      <h1>
+        Kalender
+        <small>Prosjekt: </small>
+      </h1>
+      <ol class="breadcrumb">
+        <li><a href="/home"><i class="fa fa-calendar"></i> Dashboard</a></li>
+        <li class="active">Kalender</li>
+      </ol>
+@endsection
 @section('maincontent')
     <div class="container">
         <div class="col-sm-offset-2 col-sm-8">

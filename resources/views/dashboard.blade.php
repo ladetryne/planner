@@ -2,8 +2,8 @@
 
 @section('content-header')
       <h1>
-        Maskinbestillinger
-        <small>oversikt</small>
+        Project Pro
+        <small>Dashboard</small>
       </h1>
       <ol class="breadcrumb">
         <li><a href="/home"><i class="fa fa-dashboard"></i> Hjem</a></li>
