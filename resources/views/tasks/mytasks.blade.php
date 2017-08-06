@@ -23,23 +23,27 @@
                         <p><strong>Start Dato</strong>: 11.12.2019</p>
                         <p><strong>Neste Milepel</strong>: Spise hamburger</p>
                     </div>
-                    <div class="col-sm-7">
+                    <div class="col-sm-8">
                         <p><strong>Prosjekt Beskrivelse:</strong></p>
                     </div>
-                    <div class="col-sm-2">
+                    <div class="col-sm-1">
                         
                         <div class = "btn-group">
-                           <button type = "button" class = "btn btn-primary dropdown-toggle" data-toggle = "dropdown">
+                           <button type = "button" class = "btn btn-xs btn-primary dropdown-toggle" data-toggle = "dropdown">
                               Velg Prosjekt 
                               <span class = "caret"></span>
                            </button>
                            <ul class = "dropdown-menu" role = "menu">
-                              <li><a href = "#">Action</a></li>
-                              <li><a href = "#">Another action</a></li>
-                              <li><a href = "#">Something else here</a></li>
+                                @foreach ($projects as $project)
+                                <li>
+                                    <a href = "#">
+                                            {{ $project->name }}
+                                    </a>
+                                </li>
+                                @endforeach
                               
                               <li class = "divider"></li>
-                              <li><a href = "#">Separated link</a></li>
+                              <li><a href = "#">Lag Nytt Prosjekt</a></li>
                            </ul>
                         </div>
                     </div>
@@ -80,6 +84,7 @@
                                                     <strong>Start Dato: </strong>{{ $task->start_dato }} &nbsp;
                                                     <strong>Slutt Dato: </strong>{{ $task->slutt_dato }}</div>   
                                                     <div><strong>Info: </strong>{{ $task->info }}</div>
+                                                    <div><strong>Prosjekt: </strong>{{ $task->project_id }}</div>
                                                     <div><strong>Ferdig: </strong>{{ $task->ferdig }}%</div>
                                                     <div class="row">
                                                         <div class="col-sm-11">

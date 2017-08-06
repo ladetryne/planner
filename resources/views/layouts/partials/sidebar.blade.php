@@ -21,11 +21,23 @@
       <ul class="sidebar-menu">
         <li class="header">PROJECT PRO</li>
         <!-- Optionally, you can add icons to the links -->
-        <li><a href="/home"><i class="fa fa-link"></i> <span>Dashboard</span></a></li>
-        <li><a href="/mytasks"><i class="fa fa-link"></i> <span>Mine Oppgaver</span></a></li>
-        <li><a href="/tasks"><i class="fa fa-link"></i> <span>Alle Oppgaver</span></a></li>
-        <li><a href="/newtasks"><i class="fa fa-link"></i> <span>Lag Ny Oppgave</span></a></li>
-        <li><a href="/calendar"><i class="fa fa-link"></i> <span>Kalender</span></a></li>
+        <li><a href="/home"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a></li>
+
+        <li class="treeview">
+          <a href="#">
+            <i class="fa fa-table"></i> <span>Tasks</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="/mytasks"><i class="fa fa-circle-o"></i> Mine Oppgaver</a></li>
+            <li><a href="/tasks"><i class="fa fa-circle-o"></i> Alle Oppgaver</a></li>
+            <li><a href="/newtasks"><i class="fa fa-circle-o"></i> Lag Ny Oppgave</a></li>
+          </ul>
+        </li>
+
+        <li><a href="/calendar"><i class="fa fa-calendar"></i> <span>Kalender</span></a></li>
 
         {{-- meny knapp med underknapper START --}}
 {{--         <li class="treeview">

@@ -35,12 +35,14 @@ $factory->define(App\Task::class, function (Faker\Generator $faker) {
 
     return [
         'user_id' => rand(1, 2),
+        'project_id' => rand(1, 3),
         'name' => $faker->name,
         'viktighet' => $p,
         'info' => $faker->catchPhrase,
         'arbeidstimer' => rand(8, 150),
         'ferdig' => rand(1, 100),
-        'start_dato' => \Carbon\Carbon::now()->subSeconds(rand(0, 59))->subHours(rand(0, 23))->subDays(rand(1,20))->subMonths(rand(1,3)),
+        'milestone' => false,
+        'start_dato' => \Carbon\Carbon::now()->subSeconds(rand(0, 59))->subHours(rand(0, 23))->subDays(rand(1,7))->subMonths(rand(3,12)),
         'slutt_dato' => \Carbon\Carbon::now()->subSeconds(rand(0, 59))->subHours(rand(0, 23))->subDays(rand(1,7))->subMonths(rand(3,12))
     ];
 });
@@ -51,6 +53,17 @@ $factory->define(App\Comment::class, function (Faker\Generator $faker) {
         'task_id' => rand(1, 12),
         'body' => str_random(100), 
         'created_at' => \Carbon\Carbon::now()->subSeconds(rand(0, 59))->subHours(rand(0, 23))->subDays(rand(0,4)),
+    ];
+});
+
+$factory->define(App\Project::class, function (Faker\Generator $faker) {
+
+    return [
+        'name' => $faker->name,
+        'start_dato' => \Carbon\Carbon::now()->subSeconds(rand(0, 59))->subHours(rand(0, 23))->subDays(rand(1,7))->subMonths(rand(3,12)),
+        'slutt_dato' => \Carbon\Carbon::now()->subSeconds(rand(0, 59))->subHours(rand(0, 23))->subDays(rand(1,7))->subMonths(rand(3,12)),
+        'created_at' => \Carbon\Carbon::now()->subSeconds(rand(0, 59))->subHours(rand(0, 23))->subDays(rand(0,4)),
+        'body' => $faker->sentence
     ];
 });
 

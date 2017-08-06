@@ -12,15 +12,17 @@ class Task extends Model
      * mass assignable attributes
      * @var array
      */
-    protected $fillable =   [
-                                'name',
-                                'viktighet',
-                                'info',
-                                'arbeidstimer',
-                                'slutt_dato',
-                                'start_dato',
-                                'ferdig',
-                            ];
+    protected $fillable =   
+        [
+            'name',
+            'viktighet',
+            'info',
+            'arbeidstimer',
+            'milestone',
+            'slutt_dato',
+            'start_dato',
+            'ferdig',
+        ];
 //    protected $fillable = ['viktighet'];    
     
     /**
@@ -29,6 +31,7 @@ class Task extends Model
      */
     protected $casts = [
         'user_id' => 'int',
+        'project_id' => 'int',
     ];
 
     /**
@@ -39,7 +42,10 @@ class Task extends Model
         return $this->belongsTo(User::class);
     }
 
-
+    public function project()
+    {
+        return $this->belongsTo(Project::class);
+    }
 
     public function comments()
     {

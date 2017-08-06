@@ -1,12 +1,13 @@
 @extends('layouts.admin')
 @section('content-header')
       <h1>
-        Kalender
-        <small>Prosjekt: </small>
+        Valemon Prosjektet
+        <small>Ny Oppgave: </small>
       </h1>
       <ol class="breadcrumb">
         <li><a href="/home"><i class="fa fa-calendar"></i> Dashboard</a></li>
-        <li class="active">Kalender</li>
+        <li><a href="/home"><i class="fa fa-calendar"></i> Alle Oppgaver</a></li>
+        <li class="active">Ny Oppgave</li>
       </ol>
 @endsection
 @section('maincontent')

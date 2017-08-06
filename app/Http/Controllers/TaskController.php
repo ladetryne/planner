@@ -5,6 +5,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Task;
+use App\Project;
 use App\Repositories\TaskRepository;
 
 class TaskController extends Controller
@@ -39,16 +40,18 @@ class TaskController extends Controller
     {
         $page_title = 'Tasks';
         $tasks = Task::all();
+        $projects = Project::all();
         //dd($tasks);
 
-        return view('tasks.index', compact('tasks'));
+        return view('tasks.index', compact('tasks', 'projects'));
     }
     public function myindex(Request $request)
     {
         $tasks = $this->tasks->forUser($request->user());
+        $projects = Project::all();
         //dd($tasks);
 
-        return view('tasks.mytasks', compact('tasks'));
+        return view('tasks.mytasks', compact('tasks', 'projects'));
     }
     public function newtask(Request $request)
     {
