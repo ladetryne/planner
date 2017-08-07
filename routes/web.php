@@ -23,8 +23,8 @@ Auth::routes();
 
 Route::get('/home', 'PagesController@dashboard');
 
-Route::get('/tasks', 'TaskController@index');
-Route::get('/mytasks', 'TaskController@myindex');
+Route::get('/tasks', 'Tasks\TasksController@index');
+Route::get('/mytasks', 'Tasks\MyTasksController@index');
 Route::get('/newtasks', 'TaskController@newtask');
 Route::post('/task', 'TaskController@store');
 Route::delete('/task/{task}', 'TaskController@destroy');
