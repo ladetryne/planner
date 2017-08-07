@@ -33,9 +33,12 @@
                               <span class = "caret"></span>
                            </button>
                            <ul class = "dropdown-menu" role = "menu">
+                           <li>
+                                <a href="{{ Request::url() }}">Alle</a>
+                           </li>
                                 @foreach ($projects as $project)
                                 <li>
-                                    <a href = "#">
+                                    <a href = "{{ Request::url().'/?project='.$project->id}}">
                                             {{ $project->name }}
                                     </a>
                                 </li>
@@ -84,7 +87,7 @@
                                                     <strong>Start Dato: </strong>{{ $task->start_dato }} &nbsp;
                                                     <strong>Slutt Dato: </strong>{{ $task->slutt_dato }}</div>   
                                                     <div><strong>Info: </strong>{{ $task->info }}</div>
-                                                    <div><strong>Prosjekt: </strong></div>
+                                                    <div><strong>Prosjekt: {{ $task->project->name }}</strong></div>
                                                     <div><strong>Ferdig: </strong>{{ $task->ferdig }}%</div>
                                                     <div class="row">
                                                         <div class="col-sm-11">

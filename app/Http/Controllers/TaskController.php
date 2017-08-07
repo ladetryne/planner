@@ -39,7 +39,9 @@ class TaskController extends Controller
     public function index(Request $request)
     {
         $page_title = 'Tasks';
-        $tasks = Task::all();
+        $currentProjectId = $request->project ?? '';
+        //Auth::user()->tasks()->with(['project','user'])->where('project_id', $currentProjectId)->get();
+        $tasks = Task::with(['project','user'])->where('project_id', $currentProjectId)->get();
         $projects = Project::all();
         //dd($tasks);
 
