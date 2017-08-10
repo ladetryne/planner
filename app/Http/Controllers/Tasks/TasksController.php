@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers\Tasks;
 
-namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
@@ -37,12 +36,13 @@ class TasksController extends Controller
     public function index(Request $request)
     {
         $page_title = 'Tasks';
-        $currentProjectId = $request->project ?? '';
+        $currentProjectId = $request->project ?? '1';
         //Auth::user()->tasks()->with(['project','user'])->where('project_id', $currentProjectId)->get();
         $tasks = Task::with(['project','user'])->where('project_id', $currentProjectId)->get();
         $projects = Project::all();
+        $currentproject = Project::where('id', $currentProjectId)->get();
         //dd($tasks);
 
-        return view('tasks.index', compact('tasks', 'projects'));
+        return view('tasks.index', compact('tasks', 'projects', 'currentProjectId', 'currentproject'));
     }
 }

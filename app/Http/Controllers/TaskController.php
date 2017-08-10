@@ -31,23 +31,6 @@ class TaskController extends Controller
         $this->tasks = $tasks;
     }
 
-    /**
-     * vi liste over brukerens oppgaver
-     * @param  Request  $request
-     * @return Response
-     */
-    public function index(Request $request)
-    {
-        $page_title = 'Tasks';
-        $currentProjectId = $request->project ?? '';
-        //Auth::user()->tasks()->with(['project','user'])->where('project_id', $currentProjectId)->get();
-        $tasks = Task::with(['project','user'])->where('project_id', $currentProjectId)->get();
-        $projects = Project::all();
-        //dd($tasks);
-
-        return view('tasks.index', compact('tasks', 'projects'));
-    }
-
 
     public function newtask(Request $request)
     {
@@ -56,12 +39,6 @@ class TaskController extends Controller
 
         return view('tasks.newtask', compact('tasks'));
     }
-
-
-
-
-
-
 
     /**
      *  lag ny oppgave

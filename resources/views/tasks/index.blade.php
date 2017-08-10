@@ -14,16 +14,28 @@
         <div class="col-sm-12">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <h1>Valemon Prosjektet</h1>
+                    @if (count($currentProjectId) > 0)
+                        @foreach($currentproject as $ppp)
+                    <h1>{{ $ppp->name }}</h1>
+                        @endforeach
+                    @endif
                 </div>
                 <div class="panel-body">
                     <div class="col-sm-3">
-                        <p><strong>Start Dato</strong>: 21.02.2017</p>
-                        <p><strong>Start Dato</strong>: 11.12.2019</p>
+                        @if (count($currentProjectId) > 0)
+                            @foreach($currentproject as $ppp)
+                        <p><strong>Start Dato</strong>: {{$ppp->start_dato}}</p>
+                        <p><strong>Start Dato</strong>: {{$ppp->slutt_dato}}</p>
                         <p><strong>Neste Milepel</strong>: Spise hamburger</p>
+                            @endforeach
+                        @endif
                     </div>
                     <div class="col-sm-8">
-                        <p><strong>Prosjekt Beskrivelse:</strong></p>
+                        @if (count($currentProjectId) > 0)
+                            @foreach($currentproject as $ppp)
+                        <p><strong>Prosjekt Beskrivelse:</strong>: {{$ppp->body}}</p>
+                            @endforeach
+                        @endif
                     </div>
                     <div class="col-sm-1">
                         
@@ -87,7 +99,7 @@
                                                     <strong>Start Dato: </strong>{{ $task->start_dato }} &nbsp;
                                                     <strong>Slutt Dato: </strong>{{ $task->slutt_dato }}</div>   
                                                     <div><strong>Info: </strong>{{ $task->info }}</div>
-                                                    <div><strong>Prosjekt: {{ $task->project->name }}</strong></div>
+                                                    <div><strong>Prosjekt: </strong>{{ $task->project->name }}</div>
                                                     <div><strong>Ferdig: </strong>{{ $task->ferdig }}%</div>
                                                     <div class="row">
                                                         <div class="col-sm-11">
