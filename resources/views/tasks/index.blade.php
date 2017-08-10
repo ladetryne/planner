@@ -46,7 +46,7 @@
                            </button>
                            <ul class = "dropdown-menu" role = "menu">
                            <li>
-                                <a href="{{ Request::url() }}">Alle</a>
+                                <a href="{{ Request::url() }}"></a>
                            </li>
                                 @foreach ($projects as $project)
                                 <li>
