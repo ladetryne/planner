@@ -5,6 +5,7 @@ namespace App;
 use App\User;
 use App\Comment;
 use Illuminate\Database\Eloquent\Model;
+use App\Http\Controllers\Auth;
 
 class Task extends Model
 {

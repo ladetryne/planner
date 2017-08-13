@@ -21,7 +21,7 @@ Route::get('admin', function () {
 
 Auth::routes();
 
-Route::get('/home', 'PagesController@dashboard');
+Route::get('/home', 'Pages\DashboardController@index');
 
 Route::get('/tasks', 'Tasks\TasksController@index');
 Route::get('/mytasks', 'Tasks\MyTasksController@index');
@@ -42,7 +42,10 @@ Route::post('/task/{task}/update', 'TaskController@update');
 Route::Post('/task/{task}/comments', 'CommentsController@store');
 
 // calender rute 
-Route::get('/calendar', 'PagesController@calendar');
+Route::get('/calendar', 'Pages\CalendarController@index');
+
+Route::get('/tidslinje', 'Pages\TimelineController@index');
+Route::get('/tidslinjeex', 'Pages\TimelineExampleController@index');
 
 
 

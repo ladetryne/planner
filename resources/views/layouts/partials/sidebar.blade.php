@@ -38,6 +38,9 @@
         </li>
 
         <li><a href="/calendar"><i class="fa fa-calendar"></i> <span>Kalender</span></a></li>
+        <li><a href="/tidslinje"><i class="fa fa-calendar"></i> <span>Tidslinje</span></a></li>
+        <li><a href="/tidslinjeex"><i class="fa fa-calendar"></i> <span>Tidslinje Eksempel</span></a></li>
+
 
         {{-- meny knapp med underknapper START --}}
 {{--         <li class="treeview">

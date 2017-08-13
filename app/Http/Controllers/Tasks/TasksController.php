@@ -15,6 +15,8 @@ class TasksController extends Controller
      * @var TaskRepository
      */
     protected $tasks;
+    protected $currentproject;
+    protected $currentProjectId;
 
     /**
      *  create a new controller instance
@@ -35,12 +37,13 @@ class TasksController extends Controller
      */
     public function index(Request $request)
     {
-        $page_title = 'Tasks';
+
         $currentProjectId = $request->project ?? '1';
+        $currentproject = Project::where('id', $currentProjectId)->get();
         //Auth::user()->tasks()->with(['project','user'])->where('project_id', $currentProjectId)->get();
         $tasks = Task::with(['project','user'])->where('project_id', $currentProjectId)->get();
         $projects = Project::all();
-        $currentproject = Project::where('id', $currentProjectId)->get();
+        
         //dd($tasks);
 
         return view('tasks.index', compact('tasks', 'projects', 'currentProjectId', 'currentproject'));
