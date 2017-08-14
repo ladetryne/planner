@@ -163,6 +163,7 @@ return [
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
         MaddHatter\LaravelFullcalendar\ServiceProvider::class,
+        Laracasts\Utilities\JavaScript\JavascriptServiceProvider::class,
 
         /*
          * Package Service Providers...

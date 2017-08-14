@@ -12,7 +12,7 @@ class TasksTableSeeder extends Seeder
     public function run()
     {
         \App\User::all()->each(function ($m) {
-            $m->Tasks()->saveMany(factory(App\Task::class, 6)->make());
+            $m->Tasks()->saveMany(factory(App\Task::class, 100)->make());
         });
     }
 }

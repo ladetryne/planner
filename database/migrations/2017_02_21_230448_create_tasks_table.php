@@ -23,8 +23,9 @@ class CreateTasksTable extends Migration
             $table->integer('ferdig')->unsigned();
             $table->integer('arbeidstimer')->nullable();
             $table->boolean('milestone')->default(false);
-            $table->timestamp('start_dato')->nullable();
-            $table->timestamp('slutt_dato')->nullable();
+            $table->string('farge');
+            $table->date('start_dato')->nullable();
+            $table->date('slutt_dato')->nullable();
             $table->timestamps();
         });
     }
