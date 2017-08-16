@@ -30,17 +30,15 @@ class TimelineController extends Controller
     public function index(Request $request)
     {
         $javatest = ['item1', 'item2', 'item3'];
- 
-
-
 
         $currentProjectId = $request->project ?? '1';
         $currentproject = Project::where('id', $currentProjectId)->get();
         $projects = Project::all();
         $tasks = Task::with(['project','user'])->where('project_id', $currentProjectId)->get();
+        $randomgroup = rand(997, 999);
       //  $tasks = Task::with(['project','user'])->where('project_id', $currentProjectId)->get();
 
-    	return view('pages.timeline', compact('projects', 'currentProjectId', 'currentproject', 'javatest', 'tasks'));
+    	return view('pages.timeline', compact('projects', 'currentProjectId', 'currentproject', 'javatest', 'tasks', 'randomgroup'));
     }
 }
  

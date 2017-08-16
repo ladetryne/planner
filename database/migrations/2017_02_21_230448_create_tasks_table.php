@@ -20,6 +20,7 @@ class CreateTasksTable extends Migration
             $table->string('name');
             $table->string('viktighet');
             $table->string('info');
+            $table->integer('group')->unsigned();
             $table->integer('ferdig')->unsigned();
             $table->integer('arbeidstimer')->nullable();
             $table->boolean('milestone')->default(false);

@@ -46,6 +46,9 @@ Route::get('/calendar', 'Pages\CalendarController@index');
 
 Route::get('/tidslinje', 'Pages\TimelineController@index');
 Route::get('/tidslinjeex', 'Pages\TimelineExampleController@index');
+Route::get('/tidslinjeex2', 'Pages\TimelineExampleController@index2');
+Route::get('/tidslinjeex3', 'Pages\TimelineExampleController@index3');
+
 
 
 

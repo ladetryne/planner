@@ -32,6 +32,7 @@ $factory->define(App\Task::class, function (Faker\Generator $faker) {
     "Lav",
     );
     $prio = $randomPrio [array_rand($randomPrio )];
+    
     $randomColor = array(
     "gtaskblue",
     "gtaskyellow",
@@ -49,11 +50,12 @@ $factory->define(App\Task::class, function (Faker\Generator $faker) {
         'viktighet' => $prio,
         'info' => $faker->sentence,
         'arbeidstimer' => rand(8, 150),
+        'group' => rand(997, 999),
         'ferdig' => rand(1, 100),
         'milestone' => false,
         'farge' => $color,
-        'start_dato' => \Carbon\Carbon::now()->subDays(rand(1,30))->subWeeks(rand(0,6))->subMonths(rand(1,3)),
-        'slutt_dato' => \Carbon\Carbon::now()->addDays(rand(1,30))->addWeeks(rand(7,12))->addMonths(rand(3,12)),
+        'start_dato' => \Carbon\Carbon::now()->subDays(rand(1,30))->subWeeks(rand(0,6))->addMonths(rand(0,1)),
+        'slutt_dato' => \Carbon\Carbon::now()->addDays(rand(1,30))->addWeeks(rand(3,6))->addMonths(rand(1,4)),
     ];
 });
 

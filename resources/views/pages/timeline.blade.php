@@ -12,7 +12,7 @@
                   <li class="active">Timeline</li>
               </ol>
           </div>
-          
+
       </div>
 @endsection
 
@@ -73,9 +73,9 @@
 		</div>
 	</div>
 
-	<div class="col-sm-12">
-		<div style="position:relative" class="gantt" id="GanttChartDIV"></div>
-	</div>
+
+	<div style="position:relative" class="gantt" id="GanttChartDIV"></div>
+
 @endsection
 
 @push('styles')
@@ -86,13 +86,15 @@
     <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
     <script language="javascript" src="/js/jsgantt.js"></script>
     <script type="text/javascript">
-      function go(){
-        alert('hi');
-      }
-      var mylist = ['item1', 'item2', 'item3'];
-        mylist.forEach(function(value, index) {
-      }); 
       tasks = <?php echo json_encode($tasks) ?>;  
+      projects = <?php echo json_encode($projects) ?>;  
+      rand = <?php echo json_encode($randomgroup) ?>;  
+      function randomInt(min,max)
+      {
+          return Math.floor(Math.random() * 201) - 100;
+      }
+
+
       var g = new JSGantt.GanttChart(document.getElementById('GanttChartDIV'), 'day');
          		if( g.getDivId() != null ) {
 			g.setCaptionType('Complete');
@@ -108,10 +110,15 @@
 
 
 		//	 							   	pID, 	pName, 					pStart, 	pEnd, 			pColor, 		pLink, pMile, pRes, pComp, pGroup, pParent, pOpen, pDepend, pCaption, pNotes, pGantt
-        for (var i=0; i < tasks.length; i++) {
-          g.AddTaskItem(new JSGantt.TaskItem(tasks[i]['id'], tasks[i]['name'], tasks[i]['start_dato'],tasks[i]['slutt_dato'], tasks[i]['farge'],     '',       0, tasks[i]['user']['name'],    tasks[i]['ferdig'],  0, 12, 1, 121,     '',      tasks[i]['info'],      g));
-        }
+        
+        g.AddTaskItem(new JSGantt.TaskItem(999,   'Erobre Mars',     '',           '',          'ggroupblack',  '',       0, 'N/A',    0,   1, 0,  '', '',      '',      'test', g ));
+        g.AddTaskItem(new JSGantt.TaskItem(998,   'Valemon',     '',           '',          'ggroupblack',  '',       0, 'N/A',    0,   1, 0,  '', '',      '',      'test', g ));
+        g.AddTaskItem(new JSGantt.TaskItem(997,   'Lag en Ku',     '',           '',          'ggroupblack',  '',       0, 'N/A',    0,   1, 0,  '', '',      '',      'test', g ));
+        
 
+        for (var i=0; i < tasks.length; i++) {
+          g.AddTaskItem(new JSGantt.TaskItem(tasks[i]['id'], tasks[i]['name'], tasks[i]['start_dato'],tasks[i]['slutt_dato'], tasks[i]['farge'], '',  0, tasks[i]['user']['name'],    tasks[i]['ferdig'],  '', tasks[i]['group'], 1, '',     '',      tasks[i]['info'],      g));
+        }
 
 			g.Draw();
 			}
