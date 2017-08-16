@@ -21,4 +21,8 @@ class TimelineExampleController extends Controller
     {
         return view('pages.timelineexample3');
     }
+    public function index4()
+    {
+        return view('pages.timelineexample4');
+    }
 }
