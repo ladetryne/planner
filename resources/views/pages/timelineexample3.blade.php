@@ -61,9 +61,44 @@
             <nav class="sidebar-nav">
                 <ul class="nav">
                     <li class="nav-item">
-                        <a class="nav-link" href="main.html"><i class="icon-speedometer"></i> Dashboard <span class="badge badge-primary">NEW</span></a>
+                        <a class="nav-link" href="/home"><i class="icon-speedometer"></i> Dashboard <span class="badge badge-primary">NEW</span></a>
                     </li>
-
+                    <li class="nav-title">
+                        Tasks
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/tasks"><i class="icon-speedometer"></i> Tasks </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/mytasks"><i class="icon-speedometer"></i> My Tasks </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/tasks"><i class="icon-speedometer"></i> New Task </a>
+                    </li>
+                    <li class="nav-title">
+                        Calenders
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/calendar"><i class="icon-speedometer"></i> Calender </a>
+                    </li>
+                    <li class="nav-title">
+                        Timeline
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/tidslinje"><i class="icon-speedometer"></i> Calender </a>
+                    </li>
+                    <li class="nav-title">
+                        Timeline Example
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/tidslinjeex"><i class="icon-speedometer"></i> Timeline Ex 1 </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/tidslinjeex2"><i class="icon-speedometer"></i> Timeline Ex 2 </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/tidslinjeex3"><i class="icon-speedometer"></i> Timeline Ex 3 </a>
+                    </li>
                 </ul>
             </nav>
         </div>

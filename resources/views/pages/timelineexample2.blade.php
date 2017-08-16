@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('content-header') 
-    <div class="row">
+
       <h1>
         Timeline Example 2
         <small><a href="https://roberto.open-lab.com/2012/08/24/jquery-gantt-editor/">TWGantt: </a></small>
@@ -10,7 +10,7 @@
         <li><a href="/home"><i class="fa fa-calendar"></i> Dashboard</a></li>
         <li class="active">Timeline</li>
       </ol>
-    </div>
+
 @endsection
 
 @section('maincontent')
