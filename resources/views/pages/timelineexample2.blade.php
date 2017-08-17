@@ -349,7 +349,7 @@
 	  delete ge.gantt.zoom;
 
 
-	  var project=loadFromLocalStorage();
+	  var project=loadGanttFromServer();
 
 
 	  if (!project.canWrite)
@@ -366,30 +366,21 @@
 	function loadGanttFromServer(taskId, callback) {
 
 	  //this is a simulation: load data from the local storage if you have already played with the demo or a textarea with starting demo data
-	  loadFromLocalStorage();
+	  //return loadFromLocalStorage();
 
 	  //this is the real implementation
-	  /*
-	  //var taskId = $("#taskSelector").val();
-	  var prof = new Profiler("loadServerSide");
-	  prof.reset();
+	  
+	  var taskId = 1;//$("#taskSelector").val();
+	  //var prof = new Profiler("loadServerSide");
+	  //prof.reset();
+    axios.get('/api/getProject')
+        .then(response => {
+          console.log(response.data);
+          ge.loadProject(response.data);
+          ge.checkpoint();
+        });
 
-	  $.getJSON("ganttAjaxController.jsp", {CM:"LOADPROJECT",taskId:taskId}, function(response) {
-	    //console.debug(response);
-	    if (response.ok) {
-	      prof.stop();
-
-	      ge.loadProject(response.project);
-	      ge.checkpoint(); //empty the undo stack
-
-	      if (typeof(callback)=="function") {
-	        callback(response);
-	      }
-	    } else {
-	      jsonErrorHandling(response);
-	    }
-	  });
-	  */
+	  
 	}
 
 

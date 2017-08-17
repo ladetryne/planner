@@ -9,6 +9,7 @@
         "barryvdh/laravel-debugbar": "^2.3",
         "laracasts/utilities": "^2.1",
         "laravel/framework": "5.4.*",
+        "laravel/passport": "^3.0",
         "laravel/tinker": "~1.0",
         "maddhatter/laravel-fullcalendar": "^1.2"
     },

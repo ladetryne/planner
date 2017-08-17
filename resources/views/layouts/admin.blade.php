@@ -30,6 +30,12 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
   <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
   <![endif]-->
+    <!-- Scripts -->
+    <script>
+        window.Laravel = {!! json_encode([
+            'csrfToken' => csrf_token(),
+        ]) !!};
+    </script>  
 </head>
 <!--
 BODY TAG OPTIONS:
@@ -88,6 +94,7 @@ desired effect
 <script src="{{ asset("/admin-lte/bootstrap/js/bootstrap.min.js") }}"></script>
 <!-- AdminLTE App -->
 <script src="{{ asset("/admin-lte/dist/js/app.min.js") }}"></script>
+<script src="{{ asset('js/app.js') }}"></script>
 @stack('scripts')
 <!-- Optionally, you can add Slimscroll and FastClick plugins.
      Both of these plugins are recommended to enhance the
